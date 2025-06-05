@@ -1,0 +1,394 @@
+/* === Base Styles === */
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin: 0;
+  height: 100vh;
+  color: #222;
+  background: linear-gradient(135deg, #c8e8ff 0%, #fef6e4 50%, #e6ccff 100%);
+  transition: background 0.5s, color 0.5s;
+  overflow: hidden;
+}
+
+/* Initial screen wrapper */
+#initial-wrapper {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 40px 20px;
+  margin: 100px auto 0;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  position: relative;
+}
+
+#initial-wrapper label {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: block;
+  color: #333;
+}
+
+#initial-wrapper select {
+  font-size: 20px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  width: 100%;
+  background: #fff;
+  color: #333;
+}
+
+/* === Mood Themes === */
+body.sad-theme {
+  background: linear-gradient(135deg, #00008B 0%, #000000 100%);
+  color: #e0f7fa;
+  font-family: Arial, sans-serif;
+}
+
+body.happy-theme {
+  background: linear-gradient(135deg, #87ceeb 0%, #ff69b4 45%, #ffff99 80%);
+  color: #222;
+}
+
+
+
+body.chill-theme {
+  background: linear-gradient(135deg, #e6a1b5 0%, #7dbcd9 35%, #b0b0b0 65%, #6a5acd 100%);
+  color: #f0f0f0;
+}
+
+body.angry-theme {
+  background: linear-gradient(135deg, #8B0000 0%, #FF4500 50%, #000000 100%);
+  color: #f0f0f0;
+}
+
+
+/* === Player & Controls === */
+#player-controls {
+  display: none;
+}
+
+#mood-selector {
+  margin: 60px auto 20px auto;
+  max-width: 300px;
+}
+
+#mood-selector label {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: block;
+}
+
+#mood-selector select {
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+body.sad-theme #mood-selector select {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+body.happy-theme #mood-selector select,
+body.chill-theme #mood-selector select,
+body.angry-theme #mood-selector select,
+body.nostalgic-theme #mood-selector select {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+body.sad-theme #player-controls,
+body.happy-theme #player-controls,
+body.chill-theme #player-controls,
+body.angry-theme #player-controls {
+  display: block;
+}
+
+button {
+  padding: 15px 20px;
+  margin: 10px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+body.sad-theme button {
+  background: #4caf50;
+  color: #ffffff;
+}
+
+body.happy-theme button {
+  background: rgba(255, 255, 255, 0.7);
+  color: #333333;
+}
+
+body.chill-theme button {
+  background: rgba(255, 255, 255, 0.3);
+  color: #f0f0f0;
+}
+
+body.angry-theme button {
+  background: rgba(255, 255, 255, 0.3);
+  color: #f0f0f0;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+body.sad-theme h1 {
+  color: #ffffff;
+  font-style: italic;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+}
+
+body.happy-theme h1 {
+  color: #222;
+  font-style: italic;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+body.chill-theme h1,
+body.angry-theme h1 {
+  color: #f0f0f0;
+  font-style: italic;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+p {
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+body.sad-theme p,
+body.chill-theme p,
+body.angry-theme p {
+  color: #e0f7fa;
+}
+
+body.happy-theme p {
+  color: #222;
+}
+
+/* Progress & Volume */
+#extras,
+#progress-container,
+#volume-container {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+#extras {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#progress-container {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+
+body.happy-theme #progress-container,
+body.chill-theme #progress-container,
+body.angry-theme #progress-container {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#progress {
+  flex: 1;
+  appearance: none;
+  height: 14px;
+  border-radius: 7px;
+  background: #4caf50;
+  outline: none;
+  margin-right: 15px;
+}
+
+body.happy-theme #progress,
+body.chill-theme #progress,
+body.angry-theme #progress {
+  background: #ffffff;
+}
+
+#progress::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#time-display {
+  font-size: 16px;
+  min-width: 80px;
+  text-align: right;
+  color: #222;
+}
+
+body.sad-theme #time-display,
+body.chill-theme #time-display,
+body.angry-theme #time-display {
+  color: #f0f0f0;
+}
+
+#volume-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#volume-label {
+  font-size: 16px;
+  color: #222;
+}
+
+body.sad-theme #volume-label,
+body.chill-theme #volume-label,
+body.angry-theme #volume-label {
+  color: #f0f0f0;
+}
+
+#volume {
+  flex: 1;
+  appearance: none;
+  height: 10px;
+  border-radius: 5px;
+  background: #888;
+  outline: none;
+}
+
+#volume::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #4caf50;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+body.happy-theme #volume::-webkit-slider-thumb,
+body.chill-theme #volume::-webkit-slider-thumb,
+body.angry-theme #volume::-webkit-slider-thumb {
+  background: #ffffff;
+}
+
+/* Rain */
+body.nostalgic-theme {
+  background: linear-gradient(135deg, #deb887 0%, #f5deb3 50%, #d2b48c 100%);
+  color: #5b4636;
+  font-family: 'Georgia', serif;
+}
+
+body.nostalgic-theme h1 {
+  color: #5b4636;
+  font-style: italic;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+body.nostalgic-theme p {
+  color: #5b4636;
+  font-style: italic;
+}
+
+body.nostalgic-theme button {
+  background: rgba(255, 255, 255, 0.6);
+  color: #5b4636;
+}
+
+body.nostalgic-theme #progress-container {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body.nostalgic-theme #progress {
+  background: #ffffff;
+}
+
+body.nostalgic-theme #volume-label,
+body.nostalgic-theme #time-display {
+  color: #5b4636;
+}
+
+body.nostalgic-theme #volume::-webkit-slider-thumb {
+  background: #ffffff;
+}
+body.nostalgic-theme #player-controls {
+  display: block;
+}
+
+body.nostalgic-theme button {
+  background: rgba(255, 255, 255, 0.6);
+  color: #5b4636;
+}
+
+body.nostalgic-theme p,
+body.nostalgic-theme #volume-label,
+body.nostalgic-theme #time-display {
+  color: #5b4636;
+}
+
+body.nostalgic-theme #progress-container {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+body.nostalgic-theme #progress {
+  background: #ffffff;
+}
+
+body.nostalgic-theme #progress::-webkit-slider-thumb,
+body.nostalgic-theme #volume::-webkit-slider-thumb {
+  background: #ffffff;
+}
+canvas#mood-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes shake {
+  0% { transform: translate(1px, 1px); }
+  10% { transform: translate(-1px, -2px); }
+  20% { transform: translate(-3px, 0px); }
+  30% { transform: translate(3px, 2px); }
+  40% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 2px); }
+  60% { transform: translate(-3px, 1px); }
+  70% { transform: translate(3px, 1px); }
+  80% { transform: translate(-1px, -1px); }
+  90% { transform: translate(1px, 2px); }
+  100% { transform: translate(1px, -2px); }
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
