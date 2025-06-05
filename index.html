@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mood Music</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="initial-wrapper">
+    <label for="mood-select">Choose your mood:</label>
+    <select id="mood-select">
+      <option value="" disabled selected>Select a mood</option>
+      <option value="happy">Happy</option>
+      <option value="sad">Sad</option>
+      <option value="chill">Chill</option>
+      <option value="angry">Angry</option>
+      <option value="nostalgic">Nostalgic</option>
+    </select>
+  </div>
+
+  <div id="player-controls">
+    <h1 id="mood-title"></h1>
+    <p id="mood-message"></p>
+
+    <div id="controls">
+      <button id="prev">&#9198;</button>
+      <button id="play">&#9654;</button>
+      <button id="next">&#9197;</button>
+    </div>
+
+    <div id="extras">
+      <div id="progress-container">
+        <input type="range" id="progress" value="0" min="0" max="100" step="1">
+        <span id="time-display"></span>
+      </div>
+      <div id="volume-container">
+        <span id="volume-label">Volume</span>
+        <input type="range" id="volume" value="100" min="0" max="100">
+      </div>
+    </div>
+
+    <audio id="audio-player"></audio>
+  </div>
+
+  <canvas id="mood-canvas"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
